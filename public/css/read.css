@@ -1,0 +1,92 @@
+body 
+{
+    font-family: sans-serif;
+}
+#col_blue_read
+{
+    /*Background*/
+        background-color: #003559;
+
+    /*Size*/
+        width: 50vw;
+        height: max-content;
+
+    /*Border*/
+        border-radius: 2vw;
+
+    /*Position*/
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+    /*Padding*/
+        padding: 2vw;
+
+}
+#read_pessoas
+{
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+}
+#div5
+{
+    display: flex;
+    justify-content: center;
+}
+#id_pessoa,
+#nome_pessoa,
+#email_pessoa,
+#dt-nascimento_pessoa
+{
+    font-size: 1.5vw;
+}
+#id_pessoa
+{
+    width: 32.5vw;
+}
+#nome_pessoa
+{
+    width: 30vw;
+}
+#email_pessoa
+{
+    width: 30.5vw;
+}
+#dt-nascimento_pessoa
+{
+    width: 21vw;
+}
+label
+{
+    font-size: 1.5vw;
+    margin-right: 1vw;
+}
+#a_editar,
+#a_excluir
+{
+    /*Text*/
+        text-decoration: none;
+        font-size: 2vw;
+        color: black;
+
+    /*Size*/
+        width: 15vw;
+        height: 7vh;
+
+    /*Border*/
+        border-radius: 5vw;
+
+    /*Background*/
+        background-color: white;
+
+    /*Postion*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1vw;
+}
+div
+{
+    margin: 1.5vw;
+}

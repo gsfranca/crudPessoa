@@ -1,53 +1,60 @@
-// Feito em `` porque o read se repete
-function readHTML()
-{
-    return `
-        <div id="col_blue_read">
-            <form id="${id_forms[1]}" action="GET">
+document.addEventListener("DOMContentLoaded", function () {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "../../../crudPessoa/src/read.php", true);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            var data = JSON.parse(xhr.responseText);
+
+            data.forEach(function (cliente) {
+                var container = document.createElement('div'); // Crie um novo div container para cada item
+
+                var div = `
+                <form id="${id_forms[1]}" method='POST' action="../../../crudPessoa/src/form.php">
+                    <!-- Div ID -->
+                        <div id="div1">
+                            <label for="inputIdValued">ID:</label>
+                            <input type="text" id="id_pessoa" name="id" value=${cliente.id} hidden>
+                        </div>
+                    <!-- Fim da Div ID -->
+
+                    <!-- Div Nome -->
+                        <div id="div2">
+                            <label for="inputNomeValued">Nome:</label>
+                            <input type="name" id="nome_pessoa" name="nome" value=${cliente.nome}>
+                        </div>
+                    <!-- Fim da Div Nome -->
+
+                    <!-- Div Email -->
+                        <div id="div3">
+                            <label for="inputEmailValued">Email:</label>
+                            <input type="email" id="email_pessoa" name="email"  value=${cliente.email}>
+                        </div>
+                    <!-- Fim da Div Email -->
+
+                    <!-- Div Data de Nascimento -->
+                        <div id="div4">
+                            <label for="inputDT_NascimentoValued">Data de Nascimento:</label>
+                            <input type="text" id="dt-nascimento_pessoa" name="data_nascimento" value=${cliente.data_nascimento}>
+                        </div>
+                    <!-- Fim da Div Data de Nascimento -->
+
+                    <!-- Div Botões -->
+                        <div id="div5">
+                            <!-- Botão Excluir -->
+                            <button type="submit" value="editar" name="submit">Salvar Edição</button>
+                            <button type="submit" value="deletar" name="submit">Deletar</button>
+
+                        </div>
+                    <!-- Fim da Div Botões -->
+                </form>
             
-                <!-- Div ID -->
-                    <div id="div1">
-                        <label for="inputIdValued">ID:</label>
-                        <input type="text" id="id_pessoa" name="id" value=${0}>
-                    </div>
-                <!-- Fim da Div ID -->
+                `;
 
-                <!-- Div Nome -->
-                    <div id="div2">
-                        <label for="inputNomeValued">Nome:</label>
-                        <input type="name" id="nome_pessoa" name="nome"  value=${"Fulano"}>
-                    </div>
-                <!-- Fim da Div Nome -->
-
-                <!-- Div Email -->
-                    <div id="div3">
-                        <label for="inputEmailValued">Email:</label>
-                        <input type="email" id="email_pessoa" name="email"  value=${"Fulano@Gmail.com"}>
-                    </div>
-                <!-- Fim da Div Email -->
-
-                <!-- Div Data de Nascimento -->
-                    <div id="div4">
-                        <label for="inputDT_NascimentoValued">Data de Nascimento:</label>
-                        <input type="date" id="dt-nascimento_pessoa" name="data_nascimento" value=${"0202-02-02"}>
-                    </div>
-                <!-- Fim da Div Data de Nascimento -->
-
-                <!-- Div Botões -->
-                    <div id="div5">
-                        <!-- Botão Editar -->
-                            <a href="${"LINK"}" id="a_editar">Editar</a>
-                        
-                        <!-- Botão Deletar -->
-                            <form id="formDelete">
-                                <a href id="a_excluir">Excluir</a>
-                            </form>
-                    </div>
-                <!-- Fim da Div Botões -->
-            </form>
-    `
-}
-document.addEventListener("DOMContentLoaded", function() 
-{
-    container_principal.innerHTML = readHTML();
+                container.classList.add("col_blue_read")
+                container.innerHTML = div; // Adicione o HTML ao container
+                container_principal.appendChild(container); // Adicione o container ao container_principal
+            });
+        }
+    };
+    xhr.send();
 });

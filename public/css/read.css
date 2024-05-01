@@ -2,7 +2,7 @@ body
 {
     font-family: sans-serif;
 }
-#col_blue_read
+.col_blue_read
 {
     /*Background*/
         background-color: #003559;
@@ -15,10 +15,9 @@ body
         border-radius: 2vw;
 
     /*Position*/
-        position: absolute;
+        position: relative;
         left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
 
     /*Padding*/
         padding: 2vw;
@@ -44,18 +43,26 @@ body
 #id_pessoa
 {
     width: 32.5vw;
+    color: rgb(44, 44, 44);
+    background-color: rgb(211, 210, 210);
 }
 #nome_pessoa
 {
     width: 30vw;
+    color: rgb(44, 44, 44);
+    background-color: rgb(211, 210, 210);
 }
 #email_pessoa
 {
     width: 30.5vw;
+    color: rgb(44, 44, 44);
+    background-color: rgb(211, 210, 210);
 }
 #dt-nascimento_pessoa
 {
     width: 21vw;
+    color: rgb(44, 44, 44);
+    background-color: rgb(211, 210, 210);
 }
 label
 {

@@ -12,6 +12,7 @@ const container_principal = document.getElementById("container-principal");
         novoElemento.action = action
         novoElemento.method = method
         novoElemento.href = href
+        novoElemento.name = id
 
 
         return novoElemento;
@@ -31,5 +32,3 @@ const container_principal = document.getElementById("container-principal");
         const br1 = criaElemento("br")
         const br2 = criaElemento("br")
         const br3 = criaElemento("br")
-
-

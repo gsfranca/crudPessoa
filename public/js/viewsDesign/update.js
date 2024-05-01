@@ -1,59 +1,63 @@
-// Container Azul
-container_principal.appendChild(col_blue)
+document.addEventListener("DOMContentLoaded", function () {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "../../../crudPessoa/src/update.php", true);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            var data = JSON.parse(xhr.responseText);
 
-// Formulario
-    col_blue.appendChild(formUpdate)
+            data.forEach(function (cliente) {
+                var container = document.createElement('div'); // Crie um novo div container para cada item
 
-    // Div Titulo
-        formUpdate.appendChild(div1)
-    
-        // Title
-            div1.appendChild(titleUpdate)
+                var div = `
+                <form id="${id_forms[2]}" action="GET">
+                    <!-- Div ID -->
+                        <div id="div1">
+                            <label for="inputIdValued">ID:</label>
+                            <input type="text" id="id_pessoa" name="id" value=${cliente.id} disabled>
+                        </div>
+                    <!-- Fim da Div ID -->
 
-    // Fim da Div Titulo
+                    <!-- Div Nome -->
+                        <div id="div2">
+                            <label for="inputNomeValued">Nome:</label>
+                            <input type="name" id="nome_pessoa" name="nome"  value=${cliente.nome} disabled>
+                        </div>
+                    <!-- Fim da Div Nome -->
 
-    // Div ID
-        formUpdate.appendChild(div2)
+                    <!-- Div Email -->
+                        <div id="div3">
+                            <label for="inputEmailValued">Email:</label>
+                            <input type="email" id="email_pessoa" name="email"  value=${cliente.email} disabled>
+                        </div>
+                    <!-- Fim da Div Email -->
 
-        // Nome
-            div2.appendChild(labelID)
-            div2.appendChild(inputIdValued)
+                    <!-- Div Data de Nascimento -->
+                        <div id="div4">
+                            <label for="inputDT_NascimentoValued">Data de Nascimento:</label>
+                            <input type="text" id="dt-nascimento_pessoa" name="data_nascimento" value=${cliente.data_nascimento_br} disabled>
+                        </div>
+                    <!-- Fim da Div Data de Nascimento -->
 
-    // Fim da Div ID
-    
-    // Div Nome
-        formUpdate.appendChild(div3)
+                    <!-- Div Botões -->
+                        <div id="div5">
+                            <!-- Botão Editar -->
+                            <a href="${"LINK"}" id="a_editar">Editar</a>
 
-        // Nome
-            div3.appendChild(labelNome)
-            div3.appendChild(inputNomeValued)
+                            <!-- Botão Deletar -->
+                            <form id="formDelete">
+                                <a href id="a_excluir">Excluir</a>
+                            </form>
+                        </div>
+                    <!-- Fim da Div Botões -->
+                </form>
+            
+                `;
 
-    // Fim da Div Nome
-
-    // Div Email
-        formUpdate.appendChild(div4)
-
-        // Email
-            div4.appendChild(labelEmail)
-            div4.appendChild(inputEmailValued)
-
-    // Fim da Div Email
-
-    // Div Data de Nascimento
-        formUpdate.appendChild(div6)
-
-            // Data de Nascimento
-                div6.appendChild(labelDT_Nascimento)
-                div6.appendChild(inputDT_NascimentoValued)   
-    // Fim da Div Data de Nascimento
-
-    // Div botão
-        formUpdate.appendChild(div5)
-
-        // Botão Salvar
-            div5.appendChild(btnSalvar)
-    // Fim da Div botão
-
-// Fim do Formulario
-
-// Fim do Container Azul
+                container.classList.add("col_blue_read")
+                container.innerHTML = div; // Adicione o HTML ao container
+                container_principal.appendChild(container); // Adicione o container ao container_principal
+            });
+        }
+    };
+    xhr.send();
+});

@@ -16,8 +16,10 @@ public function insere($data){
     $stmt->bindParam(3, $data['dt-nascimento_pessoa'], PDO::PARAM_STR);
  
     try {
-        if ($stmt->execute()) {
-            echo "Cliente adicionado com sucesso!";
+        if ($stmt->execute()) 
+        {
+             header("Location: http://localhost/crudPessoa/views/read.html"); 
+             exit(); 
         }
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
@@ -30,7 +32,8 @@ public function insere($data){
  
     try {
         if ($stmt->execute()) {
-            echo "Cliente EXCLUIDO com sucesso!";
+            header("Location: http://localhost/crudPessoa/views/read.html"); 
+            exit(); 
         }
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
@@ -61,7 +64,8 @@ public function insere($data){
  
     try {
         if ($stmt->execute()) {
-            echo "Status alterado com sucesso!";
+            header("Location: http://localhost/crudPessoa/views/read.html"); 
+            exit(); 
         }
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();

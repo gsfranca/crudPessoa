@@ -10,13 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 var div = `
                 <form id="${id_forms[1]}" method='POST' action="../../../crudPessoa/src/form.php">
-                    <!-- Div ID -->
-                        <div id="div1">
-                            <label for="inputIdValued">ID:</label>
-                            <input type="text" id="id_pessoa" name="id" value=${cliente.id} hidden>
-                        </div>
-                    <!-- Fim da Div ID -->
 
+                    <input type="text" id="id_pessoa" name="id" value=${cliente.id} hidden>
+    
                     <!-- Div Nome -->
                         <div id="div2">
                             <label for="inputNomeValued">Nome:</label>
@@ -41,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <!-- Div Botões -->
                         <div id="div5">
                             <!-- Botão Excluir -->
-                            <button type="submit" value="editar" name="submit">Salvar Edição</button>
-                            <button type="submit" value="deletar" name="submit">Deletar</button>
+                            <button type="submit" value="editar" name="submit" id="a_editar">Salvar Edição</button>
+                            <button type="submit" value="deletar" name="submit" id="a_excluir">Deletar</button>
 
                         </div>
                     <!-- Fim da Div Botões -->

@@ -1,47 +1,27 @@
-const aEditar = criaElemento("a", "", "a_editar", "Editar", "", "", "", "", "URL")
-const aExcluir = criaElemento("a", "", "a_excluir", "Excluir", "", "", "", "", "URL")
+const aRead = criaElemento("a", "", "a_read", "Voltar", "", "", "", "", "http://localhost/crudPessoa/views/read.html")
 
-
-// Link Editar
+// Link read
+    
+// Link Read
     // Text
-        aEditar.style.textDecoration = "none"
-        aEditar.style.fontSize = "2vw"
-        aEditar.style.color = "black"
+        aRead.style.textDecoration = "none"
+        aRead.style.fontSize = "1.5vw"
+        aRead.style.color = "black"
 
     // Size
-        aEditar.style.width = "15vw"
-        aEditar.style.height = "7vh"
+        aRead.style.width = "max-content"
+        aRead.style.height = "max-content"
+
+    // Padding
+        aRead.style.padding = "2vh 2vw"
 
     // Border
-        aEditar.style.borderRadius = "5vw"
+        aRead.style.borderRadius = "5vw"
 
     // Background
-        aEditar.style.backgroundColor ="white"
+        aRead.style.backgroundColor ="white"
 
     // Position
-        aEditar.style.display = "flex"
-        aEditar.style.justifyContent = "center"
-        aEditar.style.alignItems = "center"
-        aEditar.style.margin = "1vw"
-
-// Link Excluir
-    // Text
-        aExcluir.style.textDecoration = "none"
-        aExcluir.style.fontSize = "2vw"
-        aExcluir.style.color = "black"
-
-    // Size
-        aExcluir.style.width = "15vw"
-        aExcluir.style.height = "7vh"
-
-    // Border
-        aExcluir.style.borderRadius = "5vw"
-
-    // Background
-        aExcluir.style.backgroundColor ="white"
-
-    // Position
-        aExcluir.style.display = "flex"
-        aExcluir.style.justifyContent = "center"
-        aExcluir.style.alignItems = "center"
-        aExcluir.style.margin = "1vw"
+        aRead.style.position = "absolute"
+        aRead.style.left = "1vw"
+        aRead.style.top = "1vh"

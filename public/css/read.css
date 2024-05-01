@@ -74,7 +74,7 @@ label
 {
     /*Text*/
         text-decoration: none;
-        font-size: 2vw;
+        font-size: 1.5vw;
         color: black;
 
     /*Size*/
@@ -92,6 +92,22 @@ label
         justify-content: center;
         align-items: center;
         margin: 1vw;
+}
+#a_create
+{
+    /*Text*/
+        text-decoration: none;
+        font-size: 1.5vw;
+        color: black;
+
+    /*Border*/
+        border-radius: 5vw;
+
+    /*Padding*/
+        padding: 2vh 2vw;
+
+    /*Background*/
+        background-color: white;
 }
 div
 {
